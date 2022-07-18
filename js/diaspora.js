@@ -627,7 +627,7 @@ $(function() {
 					gitalk.render('gitalk-container')
 					Diaspora.loaded();
 				}else{
-					$('#gitalk-container').html("评论已关闭");
+					$('#gitalk-container').html("你在期待什么？");
 				}
                 return false;
                 break;
