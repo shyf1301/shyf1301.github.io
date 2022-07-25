@@ -4,18 +4,14 @@ $.ajax({
   headers: {
     'Access-Control-Allow-Origin': '*'
   },
-  url: 'http://aqua.iw233.cn/api.php?sort=random',
+  url: 'https://dev.iw233.cn/api.php?sort=random&type=json&num=40',
   timeout: 10000,
-  complete: function(a, b, c) {
-    console.log(a)
-    console.log(b)
-    console.log(c)
-  },
   success: function(data) {
-      console.log(data);
-      // const img = document.getElementById('a-pic')
-      // console.log(arrayBufferToBase64(data))
-      // img.src = 'data:image/jpg;base64,' + data;
+      const pics = data.pic
+      for (let index = 0; index < pics.length; index++) {
+        const element = document.getElementById('pic' + (index + 1));
+        if (element) element.src = pics[index]
+      }
   },
   error: function(a, b, c) {
       console.log(a)
