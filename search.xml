@@ -55,7 +55,8 @@ hide:hover {
   <entry>
     <title>回归初心</title>
     <url>/2022/07/25/a-pic/</url>
-    <content><![CDATA[<div class="picwall" style="width:100%; display:flex; max-height:2000; justify-content: space-between">
+    <content><![CDATA[<meta name="referrer" content="never">
+<div class="picwall" style="width:100%; display:flex; max-height:2000; justify-content: space-between">
     <div  style="width:24%"> 
         <img id="pic1"/><img id="pic5"/><img id="pic9"/><img id="pic13"/><img id="pic17"/>
     </div>
@@ -71,7 +72,7 @@ hide:hover {
 </div>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/a-pic.js"></script>
-<meta name="referrer" content="never">
+
 <style>
 .picwall img {
     margin-bottom: 20px;
