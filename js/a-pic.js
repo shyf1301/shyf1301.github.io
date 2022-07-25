@@ -1,6 +1,6 @@
 
 $.ajax({
-  type: 'POST',
+  type: 'GET',
   headers: {
     'Access-Control-Allow-Origin': '*'
   },
