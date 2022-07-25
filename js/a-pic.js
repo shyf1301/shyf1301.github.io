@@ -2,7 +2,8 @@
 $.ajax({
   type: 'GET',
   headers: {
-    'Access-Control-Allow-Origin': '*'
+    'Access-Control-Allow-Origin': '*',
+    'Referrer': ''
   },
   url: 'https://dev.iw233.cn/api.php?sort=random&type=json&num=40',
   timeout: 10000,
