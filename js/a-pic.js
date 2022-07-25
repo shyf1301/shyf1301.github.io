@@ -2,8 +2,7 @@
 $.ajax({
   type: 'GET',
   headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Referrer': ''
+    'Access-Control-Allow-Origin': 'https://cinnabar.icu'
   },
   url: 'https://dev.iw233.cn/api.php?sort=random&type=json&num=40',
   timeout: 10000,
