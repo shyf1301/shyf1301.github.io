@@ -44,10 +44,21 @@
 如果还不知道就去看看<span md-inline="code" spellcheck="false" class="md-pair-s md-expand"><code>宝石之国</code></span><br/>
 <blockquote cid="n132" mdtype="blockquote"><p cid="n152" mdtype="paragraph" contenteditable="true" class="md-end-block md-p"><span md-inline="plain" class="md-plain">我一定会找到 </span></p><p cid="n153" mdtype="paragraph" contenteditable="true" class="md-end-block md-p"><span md-inline="plain" class="md-plain">比夜间巡逻更快乐 </span></p><p cid="n154" mdtype="paragraph" contenteditable="true" class="md-end-block md-p"><span md-inline="plain" class="md-plain">只有你才能做的工作 </span></p><p cid="n155" mdtype="paragraph" contenteditable="true" class="md-end-block md-p"><span md-inline="plain" class="md-plain"> </span><span md-inline="tab" class="md-tab"></span><span md-inline="plain" class="md-plain">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——磷叶石</span></p></blockquote>
 </details>
-
 <details><summary>这个小破站是干什么的 </summary>
 <code>// TODO: </code>
+<style>
+hide {
+  background-color: #000000;
+  color: #000000;
+}
+hide:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+<hide>涩涩才是第一生产力！</hide>
 </details>
+
 
 ]]></content>
       <categories>
@@ -92,7 +103,7 @@
   <entry>
     <title>回归初心</title>
     <url>/2022/07/25/a-pic/</url>
-    <content><![CDATA[<img id="a-pic" src="http://aqua.iw233.cn/api.php?sort=random"/>
+    <content><![CDATA[<img id="a-pic" src="https://dev.iw233.cn/api.php?sort=random"/>
 
 ]]></content>
       <categories>
