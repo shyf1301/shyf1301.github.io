@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>回归初心</title>
+    <url>/posts/fb4226a7/</url>
+    <content><![CDATA[<meta name="referrer" content="never">
+<div class="picwall" style="width:100%; display:flex; max-height:2000; justify-content: space-between">
+    <div  style="width:24%"> 
+        <img id="pic1" src="https://dev.iw233.cn/api.php?sort=random&t=1"/><img id="pic5" src="https://dev.iw233.cn/api.php?sort=random&t=5"/><img id="pic9" src="https://dev.iw233.cn/api.php?sort=random&t=9"/><img id="pic13" src="https://dev.iw233.cn/api.php?sort=random&t=13"/><img id="pic17" src="https://dev.iw233.cn/api.php?sort=random&t=17"/>
+    </div>
+    <div style="width:24%"> 
+        <img id="pic2" src="https://dev.iw233.cn/api.php?sort=random&t=2"/><img id="pic6" src="https://dev.iw233.cn/api.php?sort=random&t=6"/><img id="pic10" src="https://dev.iw233.cn/api.php?sort=random&t=10"/><img id="pic14" src="https://dev.iw233.cn/api.php?sort=random&t=14"/><img id="pic18" src="https://dev.iw233.cn/api.php?sort=random&t=18"/>
+    </div>
+    <div style="width:24%"> 
+        <img id="pic3" src="https://dev.iw233.cn/api.php?sort=random&t=3"/><img id="pic7" src="https://dev.iw233.cn/api.php?sort=random&t=7"/><img id="pic11" src="https://dev.iw233.cn/api.php?sort=random&t=11"/><img id="pic15" src="https://dev.iw233.cn/api.php?sort=random&t=15"/><img id="pic19" src="https://dev.iw233.cn/api.php?sort=random&t=19"/>
+    </div>
+    <div style="width:24%"> 
+        <img id="pic4"  src="https://dev.iw233.cn/api.php?sort=random&t=4"/><img id="pic8" src="https://dev.iw233.cn/api.php?sort=random&t=8"/><img id="pic12" src="https://dev.iw233.cn/api.php?sort=random&t=12"/><img id="pic16" src="https://dev.iw233.cn/api.php?sort=random&t=16"/><img id="pic20" src="https://dev.iw233.cn/api.php?sort=random&t=20"/>
+    </div>
+</div>
+
+
+
+
+<style>
+.picwall img {
+    margin-bottom: 20px;
+}
+</style>
+
+
+]]></content>
+      <categories>
+        <category>好看的</category>
+      </categories>
+      <tags>
+        <tag>好看的</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一切的一切都要从qq签名不见了说起</title>
-    <url>/2022/07/16/beginning/</url>
+    <url>/posts/eb9ebd74/</url>
     <content><![CDATA[<p>为什么会有这个网页的出现</p>
 <p>梦回2022.07.13晚9点←→</p>
 <p>偶然间发现我的qq签名不见了</p>
@@ -54,7 +91,7 @@ hide:hover {
   </entry>
   <entry>
     <title>忍者相关攻略</title>
-    <url>/2022/07/18/ninja/</url>
+    <url>/posts/2e3e6e01/</url>
     <content><![CDATA[<p>直接开偷.</p>
 <h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
 <p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
@@ -69,45 +106,8 @@ hide:hover {
       </tags>
   </entry>
   <entry>
-    <title>回归初心</title>
-    <url>/2022/07/25/a-pic/</url>
-    <content><![CDATA[<meta name="referrer" content="never">
-<div class="picwall" style="width:100%; display:flex; max-height:2000; justify-content: space-between">
-    <div  style="width:24%"> 
-        <img id="pic1" src="https://dev.iw233.cn/api.php?sort=random&t=1"/><img id="pic5" src="https://dev.iw233.cn/api.php?sort=random&t=5"/><img id="pic9" src="https://dev.iw233.cn/api.php?sort=random&t=9"/><img id="pic13" src="https://dev.iw233.cn/api.php?sort=random&t=13"/><img id="pic17" src="https://dev.iw233.cn/api.php?sort=random&t=17"/>
-    </div>
-    <div style="width:24%"> 
-        <img id="pic2" src="https://dev.iw233.cn/api.php?sort=random&t=2"/><img id="pic6" src="https://dev.iw233.cn/api.php?sort=random&t=6"/><img id="pic10" src="https://dev.iw233.cn/api.php?sort=random&t=10"/><img id="pic14" src="https://dev.iw233.cn/api.php?sort=random&t=14"/><img id="pic18" src="https://dev.iw233.cn/api.php?sort=random&t=18"/>
-    </div>
-    <div style="width:24%"> 
-        <img id="pic3" src="https://dev.iw233.cn/api.php?sort=random&t=3"/><img id="pic7" src="https://dev.iw233.cn/api.php?sort=random&t=7"/><img id="pic11" src="https://dev.iw233.cn/api.php?sort=random&t=11"/><img id="pic15" src="https://dev.iw233.cn/api.php?sort=random&t=15"/><img id="pic19" src="https://dev.iw233.cn/api.php?sort=random&t=19"/>
-    </div>
-    <div style="width:24%"> 
-        <img id="pic4"  src="https://dev.iw233.cn/api.php?sort=random&t=4"/><img id="pic8" src="https://dev.iw233.cn/api.php?sort=random&t=8"/><img id="pic12" src="https://dev.iw233.cn/api.php?sort=random&t=12"/><img id="pic16" src="https://dev.iw233.cn/api.php?sort=random&t=16"/><img id="pic20" src="https://dev.iw233.cn/api.php?sort=random&t=20"/>
-    </div>
-</div>
-
-
-
-
-<style>
-.picwall img {
-    margin-bottom: 20px;
-}
-</style>
-
-
-]]></content>
-      <categories>
-        <category>好看的</category>
-      </categories>
-      <tags>
-        <tag>好看的</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pies In The Sky</title>
-    <url>/2022/07/25/pies-in-the-sky/</url>
+    <url>/posts/b1dacaa5/</url>
     <content><![CDATA[<p>[3/19] 叠过19个就开始画</p>
 <p><code>大概吧</code></p>
 <hr>
@@ -125,7 +125,7 @@ hide:hover {
   </entry>
   <entry>
     <title>秦风村连载故事会</title>
-    <url>/2022/07/17/qfc-story/</url>
+    <url>/posts/78b5d78/</url>
     <content><![CDATA[<p>nga，分享你刚编好的故事</p>
 <hr>
 <p>[连载中] <a href="https://ngabbs.com/read.php?tid=32726385">关于我上班摸鱼记录下属美工的摸鱼日常的这件事</a></p>
