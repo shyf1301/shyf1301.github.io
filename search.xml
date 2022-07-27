@@ -112,6 +112,7 @@ hide:hover {
        &#9744; <a class="toc-link" href="#13">自定义404页面</a><br>
        &#9745; <a class="toc-link" href="#14">锚点链接偏移</a><br>
        &#9744; <a class="toc-link" href="#15">代码高亮</a><br>
+       &#9744; <a class="toc-link" href="#16">自定义标签云</a><br>
     </div>
 </div>
 
@@ -200,6 +201,15 @@ hide:hover {
 
 <p><a href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a></p>
 <p><hide>懒 下次弄 <del>草 忘记 markdown 自带的 highlight 要输入语言才会高亮</del></hide></p>
+<h3 id="16">自定义标签云</h3>
+
+<p>有两种</p>
+<ul>
+<li><p><a href="https://github.com/D0n9X1n/hexo-tag-cloud">hexo-tag-cloud</a> 挺好看的</p>
+</li>
+<li><p><a href="https://cungudafa.blog.csdn.net/article/details/104616500">自定义标签云</a> 这种可以放在文章末尾</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>大饼</category>
