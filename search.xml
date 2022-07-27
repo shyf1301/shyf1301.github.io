@@ -106,6 +106,120 @@ hide:hover {
       </tags>
   </entry>
   <entry>
+    <title>关于网站的一些优化</title>
+    <url>/posts/485af310/</url>
+    <content><![CDATA[<p>有空了想起来了就弄一弄</p>
+<div style="width:100%; display:flex;">
+    <div style="margin-right: 20px">
+        &#9745; <a class="toc-link" href="#1">网站主题</a><br>
+        &#9745; <a class="toc-link" href="#2">图床</a><br>
+        &#9744; <a class="toc-link" href="#3">图片懒加载</a><br>
+        &#9744; <a class="toc-link" href="#4">返回顶部按钮</a><br>
+        &#9745; <a class="toc-link" href="#5">文章加密</a><br>
+        &#9745; <a class="toc-link" href="#6">简化文章链接</a><br>
+        &#9744; <a class="toc-link" href="#7">Live2d小人</a><br>
+        &#9744; <a class="toc-link" href="#8">代码压缩</a><br>
+        &#9745; <a class="toc-link" href="#9">显示文章更新时间</a><br>
+        &#9744; <a class="toc-link" href="#10">文章置顶</a><br>
+    </div>
+    <div>
+       &#9744; <a class="toc-link" href="#11">侧边栏小组件</a><br>
+       &#9744; <a class="toc-link" href="#12">评论功能</a><br>
+       &#9744; <a class="toc-link" href="#13">自定义404页面</a><br>
+       &#9745; <a class="toc-link" href="#14">锚点链接偏移</a><br>
+    </div>
+</div>
+
+<h3 id="1">网站主题</h3>
+
+<p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora</a></p>
+<p>修改配置文件 <code>_config.yml</code> 中主题 theme</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">theme: diaspora</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="2">图床</h3>
+
+<style>
+hide {
+  background-color: #000000;
+  color: #000000;
+}
+hide:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+<p><a href="https://www.superbed.cn/">聚合图床</a> <hide>免费白嫖还好用</hide></p>
+<h3 id="3">图片懒加载</h3>
+
+<p><a href="https://github.com/Troy-Yang/hexo-lazyload-image">hexo-lazyload-image</a></p>
+<p>整合进项目了但暂时 <code>enable: false</code></p>
+<p>在图片墙（例如<a href="/posts/fb4226a7/" title="回归初心">回归初心</a>）中使用懒加载可能会导致初次 &lt;img&gt; 链接无法获取的问题</p>
+<h3 id="4">返回顶部按钮</h3>
+
+
+
+<h3 id="5">文章加密</h3>
+
+<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt">hexo-blog-encrypt</a></p>
+<p>需要加密的文件在 <code>front matter</code> 中添加 <code>password: xxx</code></p>
+<p>配置参数还挺多的，以后碰到问题再说</p>
+<h3 id="6">简化文章链接</h3>
+
+<p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
+<p>修改配置文件<code>_config.yml</code>中<code>permalink</code>字段</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink: posts/:abbrlink/ </span><br></pre></td></tr></table></figure>
+
+<h3 id="7">Live2d小人</h3>
+
+<p><a href="https://www.jianshu.com/p/a7f4a42e4b49">教程？</a></p>
+<p>或许也可以考虑下使用<a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
+<h3 id="8">代码压缩</h3>
+
+<p>考虑使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</p>
+<h3 id="9">显示文章更新时间</h3>
+
+<p>使用脚本自动更新<code>front matter</code>中的<code>updated</code>字段</p>
+<p>不想用<a href="https://moeci.com/posts/2022/01/powershell-hexo-updated/">检查 git log</a>的方法最终使用了<a href="https://www.cnblogs.com/yyyzyyyz/p/15792199.html">读取文件信息</a>的方法</p>
+<p>在<code>article.ejs</code>布局文件中添加显示样式</p>
+<h3 id="10">文章置顶</h3>
+
+
+
+
+<h3 id="11">侧边栏小组件</h3>
+
+<p><code>主要是想给个地方显示最近更新的文章</code></p>
+<h3 id="12">评论功能</h3>
+
+<p>考虑使用 <code>Valine</code> 代替主题自带的 <code>gitalk</code></p>
+<p><hide>也可能不</hide></p>
+<p>暂时没需求懒得弄</p>
+<h3 id="13">自定义404页面</h3>
+
+<p>Hexo 提供了跳过渲染功能</p>
+<p><a href="https://qianling.pw/custom-web-page/">Hexo 跳过渲染，创建自定义网页</a></p>
+<h3 id="14">锚点链接偏移</h3>
+
+<p>一般写法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义锚记：[跳转指定位置](#jumpto)</span><br><span class="line">需要跳转的地方：&lt;xxx id=&quot;jumpto&quot;&gt; 我是目标位置 &lt;/xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但由于 header bar 的存在会造成相关部分的内容的遮盖</p>
+<p>因此需要对跳转的位置进行偏移</p>
+<p>大致的一个实现方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hash = $(this).attr(&#x27;href&#x27;)</span><br><span class="line">to = $(decodeURI(hash))</span><br><span class="line">$(&quot;html,body&quot;).animate(&#123;</span><br><span class="line">	scrollTop: to.offset().top - 50</span><br><span class="line">&#125;, 300);</span><br></pre></td></tr></table></figure>
+
+<p>这里由于主题中 TOC 的存在直接进行一个懒的偷</p>
+<p><code>case (tag.indexOf(&#39;toc-text&#39;) != -1 || tag.indexOf(&#39;toc-link&#39;) != -1 || tag.indexOf(&#39;toc-number&#39;) != -1):</code></p>
+<p>在 &lt;a &gt;中添加 <code>class=&quot;toc-text/toc-link/toc-number&quot;</code> 即可解决问题</p>
+]]></content>
+      <categories>
+        <category>大饼</category>
+      </categories>
+      <tags>
+        <tag>连载中</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pies In The Sky</title>
     <url>/posts/b1dacaa5/</url>
     <content><![CDATA[<p>[4/9] 叠过9个就开始画</p>

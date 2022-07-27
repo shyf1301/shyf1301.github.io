@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>关于网站的一些优化 - Cinnabar&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Cinnabar,"> 
+    <meta name="description" content="有空了想起来了就弄一弄
+
+    
+        &amp;#9745; 网站主题
+        &amp;#9745; 图床
+        &amp;#9744; 图片懒加载
+        &amp;#9744; 返回顶,"> 
+    <meta name="author" content="Cinnabar_YF"> 
+    <link rel="alternative" href="atom.xml" title="Cinnabar&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="关于网站的一些优化 - Cinnabar&#39;s Blog"/>
+    <meta name="twitter:description" content="有空了想起来了就弄一弄
+
+    
+        &amp;#9745; 网站主题
+        &amp;#9745; 图床
+        &amp;#9744; 图片懒加载
+        &amp;#9744; 返回顶,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Cinnabar&#39;s Blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="关于网站的一些优化 - Cinnabar&#39;s Blog"/>
+    <meta property="og:description" content="有空了想起来了就弄一弄
+
+    
+        &amp;#9745; 网站主题
+        &amp;#9745; 图床
+        &amp;#9744; 图片懒加载
+        &amp;#9744; 返回顶,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Cinnabar&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://cinnabar.icu"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">关于网站的一些优化</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">关于网站的一些优化</h1>
+        <div class="stuff">
+            <span>创建于：七月 27, 2022</span>
+            <span>最后更新于：七月 27, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%BF%9E%E8%BD%BD%E4%B8%AD/" rel="tag">连载中</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>有空了想起来了就弄一弄</p>
+<div style="width:100%; display:flex;">
+    <div style="margin-right: 20px">
+        &#9745; <a class="toc-link" href="#1">网站主题</a><br>
+        &#9745; <a class="toc-link" href="#2">图床</a><br>
+        &#9744; <a class="toc-link" href="#3">图片懒加载</a><br>
+        &#9744; <a class="toc-link" href="#4">返回顶部按钮</a><br>
+        &#9745; <a class="toc-link" href="#5">文章加密</a><br>
+        &#9745; <a class="toc-link" href="#6">简化文章链接</a><br>
+        &#9744; <a class="toc-link" href="#7">Live2d小人</a><br>
+        &#9744; <a class="toc-link" href="#8">代码压缩</a><br>
+        &#9745; <a class="toc-link" href="#9">显示文章更新时间</a><br>
+        &#9744; <a class="toc-link" href="#10">文章置顶</a><br>
+    </div>
+    <div>
+       &#9744; <a class="toc-link" href="#11">侧边栏小组件</a><br>
+       &#9744; <a class="toc-link" href="#12">评论功能</a><br>
+       &#9744; <a class="toc-link" href="#13">自定义404页面</a><br>
+       &#9745; <a class="toc-link" href="#14">锚点链接偏移</a><br>
+    </div>
+</div>
+
+<h3 id="1">网站主题</h3>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora</a></p>
+<p>修改配置文件 <code>_config.yml</code> 中主题 theme</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">theme: diaspora</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="2">图床</h3>
+
+<style>
+hide {
+  background-color: #000000;
+  color: #000000;
+}
+hide:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+<p><a target="_blank" rel="noopener" href="https://www.superbed.cn/">聚合图床</a> <hide>免费白嫖还好用</hide></p>
+<h3 id="3">图片懒加载</h3>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/Troy-Yang/hexo-lazyload-image">hexo-lazyload-image</a></p>
+<p>整合进项目了但暂时 <code>enable: false</code></p>
+<p>在图片墙（例如<a href="/posts/fb4226a7/" title="回归初心">回归初心</a>）中使用懒加载可能会导致初次 &lt;img&gt; 链接无法获取的问题</p>
+<h3 id="4">返回顶部按钮</h3>
+
+
+
+<h3 id="5">文章加密</h3>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/MikeCoder/hexo-blog-encrypt">hexo-blog-encrypt</a></p>
+<p>需要加密的文件在 <code>front matter</code> 中添加 <code>password: xxx</code></p>
+<p>配置参数还挺多的，以后碰到问题再说</p>
+<h3 id="6">简化文章链接</h3>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
+<p>修改配置文件<code>_config.yml</code>中<code>permalink</code>字段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: posts/:abbrlink/ </span><br></pre></td></tr></table></figure>
+
+<h3 id="7">Live2d小人</h3>
+
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a7f4a42e4b49">教程？</a></p>
+<p>或许也可以考虑下使用<a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
+<h3 id="8">代码压缩</h3>
+
+<p>考虑使用 <a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</p>
+<h3 id="9">显示文章更新时间</h3>
+
+<p>使用脚本自动更新<code>front matter</code>中的<code>updated</code>字段</p>
+<p>不想用<a target="_blank" rel="noopener" href="https://moeci.com/posts/2022/01/powershell-hexo-updated/">检查 git log</a>的方法最终使用了<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yyyzyyyz/p/15792199.html">读取文件信息</a>的方法</p>
+<p>在<code>article.ejs</code>布局文件中添加显示样式</p>
+<h3 id="10">文章置顶</h3>
+
+
+
+
+<h3 id="11">侧边栏小组件</h3>
+
+<p><code>主要是想给个地方显示最近更新的文章</code></p>
+<h3 id="12">评论功能</h3>
+
+<p>考虑使用 <code>Valine</code> 代替主题自带的 <code>gitalk</code></p>
+<p><hide>也可能不</hide></p>
+<p>暂时没需求懒得弄</p>
+<h3 id="13">自定义404页面</h3>
+
+<p>Hexo 提供了跳过渲染功能</p>
+<p><a target="_blank" rel="noopener" href="https://qianling.pw/custom-web-page/">Hexo 跳过渲染，创建自定义网页</a></p>
+<h3 id="14">锚点链接偏移</h3>
+
+<p>一般写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">定义锚记：[跳转指定位置](#jumpto)</span><br><span class="line">需要跳转的地方：&lt;xxx id=&quot;jumpto&quot;&gt; 我是目标位置 &lt;/xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但由于 header bar 的存在会造成相关部分的内容的遮盖</p>
+<p>因此需要对跳转的位置进行偏移</p>
+<p>大致的一个实现方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hash = $(this).attr(&#x27;href&#x27;)</span><br><span class="line">to = $(decodeURI(hash))</span><br><span class="line">$(&quot;html,body&quot;).animate(&#123;</span><br><span class="line">	scrollTop: to.offset().top - 50</span><br><span class="line">&#125;, 300);</span><br></pre></td></tr></table></figure>
+
+<p>这里由于主题中 TOC 的存在直接进行一个懒的偷</p>
+<p><code>case (tag.indexOf(&#39;toc-text&#39;) != -1 || tag.indexOf(&#39;toc-link&#39;) != -1 || tag.indexOf(&#39;toc-number&#39;) != -1):</code></p>
+<p>在 &lt;a &gt;中添加 <code>class=&quot;toc-text/toc-link/toc-number&quot;</code> 即可解决问题</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
