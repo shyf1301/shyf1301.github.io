@@ -102,7 +102,7 @@ hide:hover {
         &#9745; <a class="toc-link" href="#5">文章加密</a><br>
         &#9745; <a class="toc-link" href="#6">简化文章链接</a><br>
         &#9744; <a class="toc-link" href="#7">Live2d小人</a><br>
-        &#9744; <a class="toc-link" href="#8">代码压缩</a><br>
+        &#9745; <a class="toc-link" href="#8">代码压缩</a><br>
         &#9745; <a class="toc-link" href="#9">显示文章更新时间</a><br>
         &#9744; <a class="toc-link" href="#10">文章置顶</a><br>
     </div>
@@ -161,7 +161,9 @@ hide:hover {
 <p>或许也可以考虑下使用<a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
 <h3 id="8">代码压缩</h3>
 
-<p>考虑使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</p>
+<p><del>考虑使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</del></p>
+<p>使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 进行代码压缩</p>
+<p>第三方 js 使用第三方 cdn 引入</p>
 <h3 id="9">显示文章更新时间</h3>
 
 <p>使用脚本自动更新<code>front matter</code>中的<code>updated</code>字段</p>
@@ -219,22 +221,6 @@ hide:hover {
       </tags>
   </entry>
   <entry>
-    <title>忍者相关攻略</title>
-    <url>/posts/2e3e6e01/</url>
-    <content><![CDATA[<p>直接开偷.</p>
-<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
-<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
-<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
-<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
-]]></content>
-      <categories>
-        <category>FF14</category>
-      </categories>
-      <tags>
-        <tag>FF14</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pies In The Sky</title>
     <url>/posts/b1dacaa5/</url>
     <content><![CDATA[<p>[4/9] 叠过9个就开始画</p>
@@ -251,6 +237,22 @@ hide:hover {
       </categories>
       <tags>
         <tag>连载中</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>忍者相关攻略</title>
+    <url>/posts/2e3e6e01/</url>
+    <content><![CDATA[<p>直接开偷.</p>
+<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
+<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
+<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
+<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
+]]></content>
+      <categories>
+        <category>FF14</category>
+      </categories>
+      <tags>
+        <tag>FF14</tag>
       </tags>
   </entry>
   <entry>

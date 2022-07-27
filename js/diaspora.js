@@ -245,7 +245,9 @@ $(function() {
             setTimeout(function() {
                 $('html, body').removeClass('loading')
             }, 1000)
-            $('#mark').parallax()
+            // $('#mark').parallax()
+            var mark = document.getElementById('mark');
+            var parallaxInstance = new Parallax(mark);
             // var vibrant = new Vibrant(cover.t[0]);
             // var swatches = vibrant.swatches()
             // if (swatches['DarkVibrant']) {
