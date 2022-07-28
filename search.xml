@@ -38,22 +38,6 @@
       </tags>
   </entry>
   <entry>
-    <title>忍者相关攻略</title>
-    <url>/posts/2e3e6e01/</url>
-    <content><![CDATA[<p>直接开偷.</p>
-<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
-<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
-<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
-<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
-]]></content>
-      <categories>
-        <category>FF14</category>
-      </categories>
-      <tags>
-        <tag>FF14</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一切的一切都要从qq签名不见了说起</title>
     <url>/posts/eb9ebd74/</url>
     <content><![CDATA[<p>为什么会有这个网页的出现</p>
@@ -219,7 +203,7 @@ hide:hover {
 <h3 id="15">代码高亮</h3>
 
 <p><a href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a></p>
-<p><hide>懒 下次弄 <del>草 忘记 markdown 自带的 highlight 要输入语言才会高亮</del></hide></p>
+<p>懒 下次弄 <hide><del>草 忘记 markdown 自带的 highlight 要输入语言才会高亮</del></hide></p>
 <h3 id="16">自定义标签云</h3>
 
 <p>有两种</p>
@@ -254,6 +238,22 @@ hide:hover {
       </categories>
       <tags>
         <tag>连载中</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>忍者相关攻略</title>
+    <url>/posts/2e3e6e01/</url>
+    <content><![CDATA[<p>直接开偷.</p>
+<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
+<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
+<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
+<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
+]]></content>
+      <categories>
+        <category>FF14</category>
+      </categories>
+      <tags>
+        <tag>FF14</tag>
       </tags>
   </entry>
   <entry>
