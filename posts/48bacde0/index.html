@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en" class="loading"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>记一次服务器扩容 - Cinnabar&#39;s Blog</title><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="google" content="notranslate"><meta name="keywords" content="Cinnabar,"><meta name="description" content="前情提要：
+
+
+
+
+
+
+
+已知：系统所在分区已满且不记得上面运行了些什么服务
+求：如何在不重启的情况下对目标分区进行扩容
+再次感谢 niceb 同学对此次任务的技术支持
+不会炸吧 不会炸吧 不会炸吧,"><meta name="author" content="Cinnabar_YF"><link rel="alternative" href="atom.xml" title="Cinnabar&#39;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="记一次服务器扩容 - Cinnabar&#39;s Blog"><meta name="twitter:description" content="前情提要：
+
+
+
+
+
+
+
+已知：系统所在分区已满且不记得上面运行了些什么服务
+求：如何在不重启的情况下对目标分区进行扩容
+再次感谢 niceb 同学对此次任务的技术支持
+不会炸吧 不会炸吧 不会炸吧,"><meta property="og:site_name" content="Cinnabar&#39;s Blog"><meta property="og:type" content="object"><meta property="og:title" content="记一次服务器扩容 - Cinnabar&#39;s Blog"><meta property="og:description" content="前情提要：
+
+
+
+
+
+
+
+已知：系统所在分区已满且不记得上面运行了些什么服务
+求：如何在不重启的情况下对目标分区进行扩容
+再次感谢 niceb 同学对此次任务的技术支持
+不会炸吧 不会炸吧 不会炸吧,"><link rel="stylesheet" href="/css/diaspora.css"><script>window.searchDbPath="/search.xml"</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 5.4.2"></head><body class="loading"><span id="config-title" style="display:none">Cinnabar&#39;s Blog</span><div id="loader"></div><div id="single"><div id="top" style="display:block"><div class="bar" style="width:0"></div><a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://cinnabar.icu"></a><div title="播放/暂停" class="iconfont icon-play"></div><h3 class="subtitle">记一次服务器扩容</h3><div class="social"><div><div class="share"><a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a></div><div id="qr"></div></div></div><div class="scrollbar"></div></div><div class="section"><div class="article"><div class="main"><h1 class="title">记一次服务器扩容</h1><div class="stuff"><span>创建于：八月 15, 2022</span> <span>最后更新于：八月 15, 2022</span><ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul></div><div class="content markdown"><p>前情提要：</p><img src="./error500.png" style="height:100px"> <img src="./wx1.png" style="height:80px"> <img src="./server1.png" style="height:80px"><hr><p>已知：系统所在分区已满且不记得上面运行了些什么服务</p><p>求：如何在不重启的情况下对目标分区进行扩容</p><p><code>再次感谢 niceb 同学对此次任务的技术支持</code></p><p><hide>不会炸吧 不会炸吧 不会炸吧 天灵灵地灵灵 老天保佑</hide></p><p>解：</p><p>查看硬盘数量和分区情况</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure><details><summary>[root@localhost ~]# fdisk -l</summary><pre>Disk /dev/sda: 214.7 GB, 214748364800 bytes, 419430400 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00004424
+
+<p>   Device Boot      Start         End      Blocks   Id  System<br>/dev/sda1   *        2048     2099199     1048576   83  Linux<br>/dev/sda2         2099200   146800639    72350720   8e  Linux LVM</p>
+<p>Disk /dev/mapper/centos-root: 47.0 GB, 46980399104 bytes, 91758592 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</p>
+<p>Disk /dev/mapper/centos-swap: 4160 MB, 4160749568 bytes, 8126464 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</p>
+<p>Disk /dev/mapper/centos-home: 22.9 GB, 22938648576 bytes, 44802048 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</p></pre><p></p></details><p>或者使用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure><details><summary>[root@localhost ~]# lsblk</summary><pre>NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+fd0               2:0    1    4K  0 disk 
+sda               8:0    0  200G  0 disk 
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0   69G  0 part 
+  ├─centos-root 253:0    0 43.8G  0 lvm  /
+  ├─centos-swap 253:1    0  3.9G  0 lvm  [SWAP]
+  └─centos-home 253:2    0 21.4G  0 lvm  /home
+</pre></details><p>可以看到在 sda 下还有 131G 未分配的空间</p><h3 id="创建新分区"><a href="#创建新分区" class="headerlink" title="创建新分区"></a>创建新分区</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure><p>依次输入 n / enter / enter / enter / t / L / 8e / w</p><details><summary>[root@localhost ~]# fdisk /dev/sda</summary><pre>Welcome to fdisk (util-linux 2.23.2).
+
+<p>Changes will remain in memory only, until you decide to write them.<br>Be careful before using the write command.</p>
+<p>Command (m for help): n<br>Partition type:<br>   p   primary (2 primary, 0 extended, 2 free)<br>   e   extended<br>Select (default p):<br>Using default response p<br>Partition number (3,4, default 3):<br>First sector (146800640-419430399, default 146800640):<br>Using default value 146800640<br>Last sector, +sectors or +size{K,M,G} (146800640-419430399, default 419430399):<br>Using default value 419430399<br>Partition 3 of type Linux and of size 130 GiB is set</p>
+<p>Command (m for help): t<br>Partition number (1-3, default 3):<br>Hex code (type L to list all codes): L</p>
+<p> 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris<br> 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-<br> 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-<br> 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden C:  c6  DRDOS/sec (FAT-<br> 4  FAT16 &lt;32M      40  Venix 80286     85  Linux extended  c7  Syrinx<br> 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data<br> 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .<br> 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility<br> 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt<br> 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access<br> a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O<br> b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor<br> c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi eb  BeOS fs<br> e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT<br> f  W95 Ext’d (LBA) 54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/<br>10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC b<br>11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor<br>12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f4  SpeedStor<br>14  Hidden FAT16 &lt;3 61  SpeedStor       ab  Darwin boot     f2  DOS secondary<br>16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS<br>17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE<br>18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fd  Linux raid auto<br>1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fe  LANstep<br>1c  Hidden W95 FAT3 75  PC/IX           be  Solaris boot    ff  BBT<br>1e  Hidden W95 FAT1 80  Old Minix<br>Hex code (type L to list all codes): 8e<br>Changed type of partition ‘Linux’ to ‘Linux LVM’</p>
+<p>Command (m for help): w<br>The partition table has been altered!</p>
+<p>Calling ioctl() to re-read partition table.</p>
+<p>WARNING: Re-reading the partition table failed with error 16: Device or resource busy.<br>The kernel still uses the old table. The new table will be used at<br>the next reboot or after you run partprobe(8) or kpartx(8)<br>Syncing disks.<br></p></pre></details><p></p><pre>
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200   146800639    72350720   8e  Linux LVM
+/dev/sda3       146800640   419430399   136314880   8e  Linux LVM
+</pre><p><code>The new table be used at the next reboot or after you run partprobe(8) or kpartx(8)</code></p><p><del>[root@localhost ~]# partprobe /dev/sda3</del><br><del>Error: Could not stat device /dev/sda3 - No such file or directory.</del></p><h3 id="重读分区表"><a href="#重读分区表" class="headerlink" title="重读分区表"></a>重读分区表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">partprobe</span><br></pre></td></tr></table></figure><p>该命令没有输出</p><h3 id="创建物理卷"><a href="#创建物理卷" class="headerlink" title="创建物理卷"></a>创建物理卷</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvcreate /dev/sda3</span><br></pre></td></tr></table></figure><details><summary>[root@localhost ~]# pvcreate /dev/sda3</summary><pre>Physical volume "/dev/sda3" successfully created.
+</pre></details><h3 id="添加物理卷-dev-sda3-到卷组-centos"><a href="#添加物理卷-dev-sda3-到卷组-centos" class="headerlink" title="添加物理卷 /dev/sda3 到卷组 centos"></a>添加物理卷 /dev/sda3 到卷组 centos</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgextend centos /dev/sda3</span><br></pre></td></tr></table></figure><pre>[root@localhost ~]# pvcreate /dev/sda3
+/etc/lvm/archive/.lvm_localhost.localdomain_25674_920701457: write error failed: No space left on device
+</pre><p>划重点 <code>No space left on device</code></p><p>真的是一滴都不剩了</p><details><summary>[root@localhost ~]# pvcreate /dev/sda3</summary><pre>Volume group "centos" successfully extended
+</pre></details><p>此时观察一下 centos 卷组</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgdisplay</span><br></pre></td></tr></table></figure><pre>--- Volume group ---
+  VG Name               centos
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  5
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               198.99 GiB
+  PE Size               4.00 MiB
+  Total PE              50942
+  Alloc PE / Size       17662 / 68.99 GiB
+  Free  PE / Size       33280 / 130.00 GiB
+  VG UUID               BSr9nB-EIMu-xRLk-bdo0-Z2x6-ZC4N-asZ5Gx</pre><p><code>Free PE / Size 33280 / 130.00 GiB</code></p><h3 id="将空闲的空间分配给-root-文件系统"><a href="#将空闲的空间分配给-root-文件系统" class="headerlink" title="将空闲的空间分配给 root 文件系统"></a>将空闲的空间分配给 root 文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvextend -l +100%FREE /dev/mapper/centos-root</span><br></pre></td></tr></table></figure><details><summary>[root@localhost ~]# lvextend -l +100%FREE /dev/mapper/centos-root</summary><pre>Size of logical volume centos/root changed from 43.75 GiB (11201 extents) to 173.75 GiB (44481 extents).
+Logical volume centos/root successfully resized.</pre></details><h3 id="对-root-文件系统执行扩容"><a href="#对-root-文件系统执行扩容" class="headerlink" title="对 root 文件系统执行扩容"></a>对 root 文件系统执行扩容</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xfs_growfs /dev/mapper/centos-root</span><br></pre></td></tr></table></figure><details><summary>[root@localhost ~]# xfs_growfs /dev/mapper/centos-root</summary><pre>meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=2867456 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=11469824, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=5600, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 11469824 to 45548544
+</pre></details><hr><p>最后看一眼磁盘使用情况</p><pre>
+[root@localhost ~]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root  174G   44G  131G  26% /
+</pre><p>OK 下班</p><!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]--><audio id="audio" loop preload="auto" controls data-autoplay="false"><source type="audio/mpeg" src=""></audio><ul id="audio-list" style="display:none"><li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li><li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li></ul></div><div id="gitalk-container" class="comment link" data-enable="false" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div></div></div></div></div></body><script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script><script src="/js/diaspora.js"></script><script src="/js/plugin.js"></script><link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/photoswipe/4.1.2/photoswipe.min.css"><link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css"><script src="//cdn.bootcdn.net/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script><script src="//cdn.bootcdn.net/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></html>

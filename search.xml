@@ -38,6 +38,140 @@
       </tags>
   </entry>
   <entry>
+    <title>关于网站的一些优化</title>
+    <url>/posts/485af310/</url>
+    <content><![CDATA[<p>有空了想起来了就弄一弄</p>
+<div style="width:100%; display:flex;">
+    <div style="margin-right: 20px">
+        &#9745; <a class="toc-link" href="#1">网站主题</a><br>
+        &#9745; <a class="toc-link" href="#2">图床</a><br>
+        &#9744; <a class="toc-link" href="#3">图片懒加载</a><br>
+        &#9744; <a class="toc-link" href="#4">返回顶部按钮</a><br>
+        &#9745; <a class="toc-link" href="#5">文章加密</a><br>
+        &#9745; <a class="toc-link" href="#6">简化文章链接</a><br>
+        &#9744; <a class="toc-link" href="#7">Live2d小人</a><br>
+        &#9745; <a class="toc-link" href="#8">代码压缩</a><br>
+        &#9745; <a class="toc-link" href="#9">显示文章更新时间</a><br>
+        &#9744; <a class="toc-link" href="#10">文章置顶</a><br>
+    </div>
+    <div>
+       &#9744; <a class="toc-link" href="#11">侧边栏小组件</a><br>
+       &#9744; <a class="toc-link" href="#12">评论功能</a><br>
+       &#9745; <a class="toc-link" href="#13">自定义404页面</a><br>
+       &#9745; <a class="toc-link" href="#14">锚点链接偏移</a><br>
+       &#9744; <a class="toc-link" href="#15">代码高亮</a><br>
+       &#9744; <a class="toc-link" href="#16">自定义标签云</a><br>
+    </div>
+</div>
+
+<h3 id="1">网站主题</h3>
+
+<p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora</a></p>
+<p>修改配置文件 <code>_config.yml</code> 中主题 theme</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2">图床</h3>
+
+<style>
+hide {
+  background-color: #000000;
+  color: #000000;
+}
+hide:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+<p><a href="https://www.superbed.cn/">聚合图床</a> <hide>免费白嫖还好用</hide></p>
+<h3 id="3">图片懒加载</h3>
+
+<p><a href="https://github.com/Troy-Yang/hexo-lazyload-image">hexo-lazyload-image</a></p>
+<p>整合进项目了但暂时 <code>enable: false</code></p>
+<p>在图片墙（例如<a href="/posts/fb4226a7/" title="回归初心">回归初心</a>）中使用懒加载可能会导致初次 &lt;img&gt; 链接无法获取的问题</p>
+<h3 id="4">返回顶部按钮</h3>
+
+
+
+<h3 id="5">文章加密</h3>
+
+<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt">hexo-blog-encrypt</a></p>
+<p>需要加密的文件在 <code>front matter</code> 中添加 <code>password: xxx</code></p>
+<p>配置参数还挺多的，以后碰到问题再说</p>
+<h3 id="6">简化文章链接</h3>
+
+<p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
+<p>修改配置文件<code>_config.yml</code>中<code>permalink</code>字段</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="7">Live2d小人</h3>
+
+<p><a href="https://www.jianshu.com/p/a7f4a42e4b49">教程？</a></p>
+<p>或许也可以考虑下使用<a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
+<h3 id="8">代码压缩</h3>
+
+<p><del>考虑使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</del></p>
+<p>使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 进行代码压缩</p>
+<p><hide>cnm</hide> <code>特别注意不要使用 npm install hexo-neat --save 这玩意最后一次更新在2年前</code> <hide>cnm</hide></p>
+<p>第三方 js 使用第三方 cdn 引入</p>
+<h3 id="9">显示文章更新时间</h3>
+
+<p>使用脚本自动更新<code>front matter</code>中的<code>updated</code>字段</p>
+<p>不想用<a href="https://moeci.com/posts/2022/01/powershell-hexo-updated/">检查 git log</a>的方法最终使用了<a href="https://www.cnblogs.com/yyyzyyyz/p/15792199.html">读取文件信息</a>的方法</p>
+<p>在<code>article.ejs</code>布局文件中添加显示样式</p>
+<h3 id="10">文章置顶</h3>
+
+
+
+
+<h3 id="11">侧边栏小组件</h3>
+
+<p><code>主要是想给个地方显示最近更新的文章</code></p>
+<h3 id="12">评论功能</h3>
+
+<p>考虑使用 <code>Valine</code> 代替主题自带的 <code>gitalk</code></p>
+<p><hide>也可能不</hide></p>
+<p>暂时没需求懒得弄</p>
+<h3 id="13">自定义404页面</h3>
+
+<p>Hexo 提供了跳过渲染功能</p>
+<p><del><a href="https://qianling.pw/custom-web-page/">Hexo 跳过渲染，创建自定义网页</a></del></p>
+<p>上面那个因为主题还是插件问题好像不太好使</p>
+<p>用<a href="https://blog.csdn.net/cungudafa/article/details/106199111">这个</a></p>
+<h3 id="14">锚点链接偏移</h3>
+
+<p>一般写法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义锚记：[跳转指定位置](#jumpto)</span><br><span class="line">需要跳转的地方：&lt;xxx id=&quot;jumpto&quot;&gt; 我是目标位置 &lt;/xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但由于 header bar 的存在会造成相关部分的内容的遮盖</p>
+<p>因此需要对跳转的位置进行偏移</p>
+<p>大致的一个实现方法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hash = $(<span class="variable language_">this</span>).<span class="title function_">attr</span>(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">to = $(<span class="built_in">decodeURI</span>(hash))</span><br><span class="line">$(<span class="string">&quot;html,body&quot;</span>).<span class="title function_">animate</span>(&#123;</span><br><span class="line">	<span class="attr">scrollTop</span>: to.<span class="title function_">offset</span>().<span class="property">top</span> - <span class="number">50</span></span><br><span class="line">&#125;, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这里由于主题中 TOC 的存在直接进行一个懒的偷</p>
+<p><code>case (tag.indexOf(&#39;toc-text&#39;) != -1 || tag.indexOf(&#39;toc-link&#39;) != -1 || tag.indexOf(&#39;toc-number&#39;) != -1):</code></p>
+<p>在 &lt;a&gt; 中添加 <code>class=&quot;toc-text/toc-link/toc-number&quot;</code> 即可解决问题</p>
+<h3 id="15">代码高亮</h3>
+
+<p><a href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a></p>
+<p>懒 下次弄 <hide><del>草 忘记 markdown 自带的 highlight 要输入语言才会高亮</del></hide></p>
+<h3 id="16">自定义标签云</h3>
+
+<p>有两种</p>
+<ul>
+<li><p><a href="https://github.com/D0n9X1n/hexo-tag-cloud">hexo-tag-cloud</a> 挺好看的 <hide>华而不实</hide></p>
+</li>
+<li><p><a href="https://cungudafa.blog.csdn.net/article/details/104616500">自定义标签云</a> 这种可以放在文章末尾</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大饼</category>
+      </categories>
+      <tags>
+        <tag>连载中</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一切的一切都要从qq签名不见了说起</title>
     <url>/posts/eb9ebd74/</url>
     <content><![CDATA[<p>为什么会有这个网页的出现</p>
@@ -281,144 +415,10 @@ hide:hover {
       </tags>
   </entry>
   <entry>
-    <title>关于网站的一些优化</title>
-    <url>/posts/485af310/</url>
-    <content><![CDATA[<p>有空了想起来了就弄一弄</p>
-<div style="width:100%; display:flex;">
-    <div style="margin-right: 20px">
-        &#9745; <a class="toc-link" href="#1">网站主题</a><br>
-        &#9745; <a class="toc-link" href="#2">图床</a><br>
-        &#9744; <a class="toc-link" href="#3">图片懒加载</a><br>
-        &#9744; <a class="toc-link" href="#4">返回顶部按钮</a><br>
-        &#9745; <a class="toc-link" href="#5">文章加密</a><br>
-        &#9745; <a class="toc-link" href="#6">简化文章链接</a><br>
-        &#9744; <a class="toc-link" href="#7">Live2d小人</a><br>
-        &#9745; <a class="toc-link" href="#8">代码压缩</a><br>
-        &#9745; <a class="toc-link" href="#9">显示文章更新时间</a><br>
-        &#9744; <a class="toc-link" href="#10">文章置顶</a><br>
-    </div>
-    <div>
-       &#9744; <a class="toc-link" href="#11">侧边栏小组件</a><br>
-       &#9744; <a class="toc-link" href="#12">评论功能</a><br>
-       &#9745; <a class="toc-link" href="#13">自定义404页面</a><br>
-       &#9745; <a class="toc-link" href="#14">锚点链接偏移</a><br>
-       &#9744; <a class="toc-link" href="#15">代码高亮</a><br>
-       &#9744; <a class="toc-link" href="#16">自定义标签云</a><br>
-    </div>
-</div>
-
-<h3 id="1">网站主题</h3>
-
-<p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora</a></p>
-<p>修改配置文件 <code>_config.yml</code> 中主题 theme</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2">图床</h3>
-
-<style>
-hide {
-  background-color: #000000;
-  color: #000000;
-}
-hide:hover {
-  background-color: white;
-  color: black;
-}
-</style>
-<p><a href="https://www.superbed.cn/">聚合图床</a> <hide>免费白嫖还好用</hide></p>
-<h3 id="3">图片懒加载</h3>
-
-<p><a href="https://github.com/Troy-Yang/hexo-lazyload-image">hexo-lazyload-image</a></p>
-<p>整合进项目了但暂时 <code>enable: false</code></p>
-<p>在图片墙（例如<a href="/posts/fb4226a7/" title="回归初心">回归初心</a>）中使用懒加载可能会导致初次 &lt;img&gt; 链接无法获取的问题</p>
-<h3 id="4">返回顶部按钮</h3>
-
-
-
-<h3 id="5">文章加密</h3>
-
-<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt">hexo-blog-encrypt</a></p>
-<p>需要加密的文件在 <code>front matter</code> 中添加 <code>password: xxx</code></p>
-<p>配置参数还挺多的，以后碰到问题再说</p>
-<h3 id="6">简化文章链接</h3>
-
-<p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
-<p>修改配置文件<code>_config.yml</code>中<code>permalink</code>字段</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span> </span><br></pre></td></tr></table></figure>
-
-<h3 id="7">Live2d小人</h3>
-
-<p><a href="https://www.jianshu.com/p/a7f4a42e4b49">教程？</a></p>
-<p>或许也可以考虑下使用<a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
-<h3 id="8">代码压缩</h3>
-
-<p><del>考虑使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 或者 gulp</del></p>
-<p>使用 <a href="https://github.com/rozbo/hexo-neat">hexo-neat</a> 进行代码压缩</p>
-<p><hide>cnm</hide> <code>特别注意不要使用 npm install hexo-neat --save 这玩意最后一次更新在2年前</code> <hide>cnm</hide></p>
-<p>第三方 js 使用第三方 cdn 引入</p>
-<h3 id="9">显示文章更新时间</h3>
-
-<p>使用脚本自动更新<code>front matter</code>中的<code>updated</code>字段</p>
-<p>不想用<a href="https://moeci.com/posts/2022/01/powershell-hexo-updated/">检查 git log</a>的方法最终使用了<a href="https://www.cnblogs.com/yyyzyyyz/p/15792199.html">读取文件信息</a>的方法</p>
-<p>在<code>article.ejs</code>布局文件中添加显示样式</p>
-<h3 id="10">文章置顶</h3>
-
-
-
-
-<h3 id="11">侧边栏小组件</h3>
-
-<p><code>主要是想给个地方显示最近更新的文章</code></p>
-<h3 id="12">评论功能</h3>
-
-<p>考虑使用 <code>Valine</code> 代替主题自带的 <code>gitalk</code></p>
-<p><hide>也可能不</hide></p>
-<p>暂时没需求懒得弄</p>
-<h3 id="13">自定义404页面</h3>
-
-<p>Hexo 提供了跳过渲染功能</p>
-<p><del><a href="https://qianling.pw/custom-web-page/">Hexo 跳过渲染，创建自定义网页</a></del></p>
-<p>上面那个因为主题还是插件问题好像不太好使</p>
-<p>用<a href="https://blog.csdn.net/cungudafa/article/details/106199111">这个</a></p>
-<h3 id="14">锚点链接偏移</h3>
-
-<p>一般写法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义锚记：[跳转指定位置](#jumpto)</span><br><span class="line">需要跳转的地方：&lt;xxx id=&quot;jumpto&quot;&gt; 我是目标位置 &lt;/xxx&gt;</span><br></pre></td></tr></table></figure>
-
-<p>但由于 header bar 的存在会造成相关部分的内容的遮盖</p>
-<p>因此需要对跳转的位置进行偏移</p>
-<p>大致的一个实现方法</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hash = $(<span class="variable language_">this</span>).<span class="title function_">attr</span>(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">to = $(<span class="built_in">decodeURI</span>(hash))</span><br><span class="line">$(<span class="string">&quot;html,body&quot;</span>).<span class="title function_">animate</span>(&#123;</span><br><span class="line">	<span class="attr">scrollTop</span>: to.<span class="title function_">offset</span>().<span class="property">top</span> - <span class="number">50</span></span><br><span class="line">&#125;, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
-
-<p>这里由于主题中 TOC 的存在直接进行一个懒的偷</p>
-<p><code>case (tag.indexOf(&#39;toc-text&#39;) != -1 || tag.indexOf(&#39;toc-link&#39;) != -1 || tag.indexOf(&#39;toc-number&#39;) != -1):</code></p>
-<p>在 &lt;a&gt; 中添加 <code>class=&quot;toc-text/toc-link/toc-number&quot;</code> 即可解决问题</p>
-<h3 id="15">代码高亮</h3>
-
-<p><a href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a></p>
-<p>懒 下次弄 <hide><del>草 忘记 markdown 自带的 highlight 要输入语言才会高亮</del></hide></p>
-<h3 id="16">自定义标签云</h3>
-
-<p>有两种</p>
-<ul>
-<li><p><a href="https://github.com/D0n9X1n/hexo-tag-cloud">hexo-tag-cloud</a> 挺好看的 <hide>华而不实</hide></p>
-</li>
-<li><p><a href="https://cungudafa.blog.csdn.net/article/details/104616500">自定义标签云</a> 这种可以放在文章末尾</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大饼</category>
-      </categories>
-      <tags>
-        <tag>连载中</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>开发日志2</title>
     <url>/posts/306a76ac/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="f2cf79968d05f913ba2e03cb222e1c6bf98cad7956a7c379c9507fb68e9b24b7">a70224fdf26da160e93cff72afb74972a0981c7962c4afd3ae2e996154730a2b93bc32adc57032bffee6f5e15eea31779e2c97299068fd4a2bcc3c1bef7bd263f0f4291ed51a1c700f87aa563895898198689db96d87d9a6d837dfd75ca0c983bc0616117ba60b8d1442bd186a45c461fcfa4885ae74aed21abe063156ef01a434f5b691b4442c8e0856edae5d3bc3e356042f1833151ec3d94d5bbbe7683c59896f014755f4ccba563e40e8e507223041325fd50a0375e5d82f33b516a50cb86a3e76b35ec3e3b476ca86acddc61934d6f83a33b20a3f4d5c6d37a64b8193899c749d083337b549d9c1c9615bda16ba3212b636150614a4dc3c4692321eadd1992c73d9a2eebcef3ddd6ee2345c4fd171eb55f20da778a252744c8e224500b24a719efec047e96fb10139e6fa8f1cc455937792f4f6c6a0e0d28e33a8c1bacafdcf791b6eb1f8bbdefcaf932c7f8b8bc3bbfd184fbad7bdb3b33dd16c1b396a7d1ab9be2b67fb62a910ced865828f1b8e950539ae37c8080dd2dfe74a359a3867191f583b41079bf6020f432a797cf8be12c4d9506405dcc2c792f574b50648d5643e62aa095325811a4c54bee1dabbd28bb0bcb0753706dee281ed2b07d9a16c2e32a5e998074977dd14945a8fa638349919ab9f39f5568fb802694dd61ad08ddacf3b474a25a07cbf06504228bff6eb5493355264bea0f037cbaca49223d04ee33b5ea7d31af811490105404a96c090eca162c073c828a9dd77ccb75d4a86321b85452b0e204c628c0dc9c2e4b0e8211956a08effab15549949e1a9e2180fb1b4483fd5990f659a9dfec57fcde267d64f11772309294b5ec5c6def8f6f85815742c6b0e15893f20f1632734a46f4fd4072eb0f42cab2c8fcba37aeff4921ea50f7c1cde8aa8264cbe28ce9861183c71c26e48663eec6ce66cf8d46c1922f49dd190188d5a2c91cfe3b41532e2ee65ca9bd7a7662613d3bb55a70b02b1c563486c0325f91b1ede99aec429ac62d689ce8ffc5a0c148e5f345b74c57f9f9ac1556a36e30a952998f77b9e374e3a043c3a33cd0ad170f2ebf5912b42618a5572f4206e350aae55e64b255e830467648c77e5c235c1c605c8d7a9d4b00f530692b68606ce010bde792f2331fcfb4e9cadef20b9fa125d3e0849800b1dc7cec4dbccdb78ac167cdfe486537ed8b6592ab75672d9d8317b1e8bf9b16ea4fd42d6b28f7eb1725e402f6d044912d28cd86e3b59205f900469cf50b91226a5933647af71851279a91a9c6025d91a6ea95a12e4b446f439e74e977eb553c5d50846113e3c9431072077040db4029c4bec36c5a3c6c33f52c3d6092b522d7166d6e6394d6185452991233e9a2f264c4a764748f1c54390745dc16baef985cd1c716adf9a6e551b400dd9587ab88b6be10c36f9552300e0f1238536728c39301193bd51288d2fc0d1e76de31807e1b444afb8abf4ab32fe2f6c76603fd451fb271a24df7b8bbe711387a08a24a171912515d4743388be05deedb43119198cbca40b09459fc37bba4c8e81be5780e515a29bba7fa96820bf091c37aeb98aa6de37be8af756cced4d4b106ef85c86027e83d27c2221ec7bedb8855ce64a1d8541e4700781aa7b479823edc9e30b8bb299f26fa3bb38f3606186c90d1e0d02c94760fd5150d24a9b9b3ed1993a95415509fd05442cf7154049eb1d1077b165c7d50b19db6cbd0b490d372ffc753e9280043e7482681877780ad910127d0216eb6f16192142ed0d47aa6f09e5a4ee050b052195b31d3ac0741c896b6c61cf326c7a3b78a364544dc25b42dbefc53d75b79017bb2a109326d073141ce0d56b58cd98a815c9c205a926a494f746e870ffe5fb1ec2c07b422cbe0c89d9000385be633f631ec5a50ce537c8ae9444a9ea02a42d2fb5392867d21cd8901606a82c1d7db83aa8069d20c9af8e0ea391adc7db8e9c32da224c4f613ef9ffd2ccfe4f10fb37741bc39dad0ab32f10b9cb6181aff12f40dc2f9f6d41cb05990397f87959574c2604f03c25e751ebbd2ce3d2345ca740e4120173b1576fe77db3928645e38ca1b407867c4f753e87c8c25c5f4563ccd398ca85eeaee61623f0d13e715c0fcfef5da878df4172e927ed91bbf29b6a8023cf8145c2dbdce01aee1d624aa7671dd46cb3303f403bd9b2ce078e152ad882993aa64ba1fc0c9304b436ae23e2f5d94dcda1dca897ce63f0e6c27e3872819c07469e056c7e2eccdbb8c56888d8df408833b4be517b308c3db3ab34f756ae9d548144aca2f435b351f2f25340bea979fa5d6c9e0a641ecff9cf45780a6a3505141fd71c6c13881311d300518c303701fe677fd11eb91c31bf6384405f9805b6cc99d04bc73c216a3a46603e418ae106c4f24ed42ddf51e3c412ace2b58d059d61e1124a35e1a995ee573192cc8d215a8dda7b0361cd71584c50115c40d98c6b5523f2d74279cbfc8b3edc904280e00392cc5dba0f514a875278aac2c0436e47973abc876f863c7c353970e4c01cebf0e44444fc63bedd2ca8edeb2ad26a4f19b04f1fb42e64a543529c67432a849438e51aeb61a2a4cc69673a16c5da37c6f2d49926f08973c889e3b29bf991b89a181ec94e65d7a3c2e1277d54e04f11ab3f65d6af2d93d0232c6e9edcf6c396388e5bde416fcae64f3b27d770d5f17249c5e09f5eac3d9878ec1cf21b6513ee2a8b031a440f2f31ed287aa9a2d2076b7ee425f3f011c369bdd22ec3a2bf5dd43f935e7cea94aa13c0f1d251eee9498fa4f54b49e07b5da78dd2d751f8ac9962a54443a0d421fe41eedc65d2443bba132d048c2b533d28214988efe790022424d25f1bd697a3159bb61254bfbbdee0e2709e1fa7695e0a09c45ca0eeb4f208c8d551a66a267ad532e87725dc5ad947722209c418052e17248565e138832a13bc8c5cca958b7fe7c080146f4c499778a6f3757e17e371edbe66f423db4a55bd02246a46171488e58ebe2d72d6628f5bc891e101a65bc94bf207cdfd6d51dad7154c0819916fa02758e6c7ae83a3164eb0265d36b59cce1d6e5e267252cc24ac59751031a337558d9e6d147d1bf9dafc2e27c42b514e6c0a45d49c5895301c01e4a0da4bdce498d9d3dc1f870be6cbe3b19e1ae7ea7cc569841f49679c47be1668c04490233efb462f607cabe8e7194dacfafb2342bf56225383f8238897a08def6b5da1d59790dcafac346bba49330c7755da6fa5751918243f2272fab9825857af702b53461d63dab76e3d8e779574194bde9e2b6bc86189b3156bb8bcda922db23a6b0fe07466661138a6cb99f8f059392d4bbdd74b15e297cadf4033e0bbf18f40ed119c4b471205be8cec8b64177ee345e10f6df03dc2fa8a33a94788394c20a2638aee4e2a7e24181a535ae05e63d192c8d2e5905c37b15bca493efc1f04b1cc4e06eecc48446686b18c1b679cf642fef7d2c2851a502146c4e32bc57f8801e09a72dd1414edb6eadb94697a435ab34df29e8412697de80516b71c28af9f17798018f919eb44da1a4d2613f2e4fd7e729b8c2a5ab81c2474dfbfab661e7cce09db8c18e366fda2d291826b6471ad32adfdee1effa811b26aba95b68d106964c91ec0f7eda639061debd735439e8734796b452ce86a2029fcd9e6d14fd6bae69f6b1c820edbfeed3a77a62cf98f1fccd64b16b47e01d62c7ea2c63fb1e4d0d97b5a83eaa4ac2f0ec74c5ba559f1b198b6d966eb26beedd8434ea3666c956a595841953fcf9d6fe7bacec4f29790a4b98edb9c232d787b257ff458a1204428e75bca12849d93ef59dd56adc72e87628520585ddcfddb981529ba1b7f011b2991ab226ff5c22d780dd4ee70677f0b3a07e6f89ef114388488abc2afe86c3bd2a6eef6e3bb510c5609e4fe475d03d5cbf401236153d3199b2d92bc4dcc71233e80900133f899f0fb9c4b7e378b985914116ceed068681164e1547b35dc48c4648da773ff384dcf2f8f9cb2ac94671036640ee5cdfc5caea02a5c3fbc79df99d0316fc4bcf29df72f19a6048c1adc3c98b3747c433ea8cf5a24c9e216d0bc8e3be9fe0107a4aade7e6253fb82b013320ebc86839359e0d34c25cbf88555f5fdfd18c1d9f1a7b937ede3508b26f3b54e3f63df1a2ae92ba00add407be6d81c017824bf3d03dcfd2f9b52d6e6669c93301d5784c7332dfe528d9622c45aa7cffdfd0ce00cf2035871c4b1515af40eba09a92ddc0f9e7ce4ae47713ac6e3414357bbd2ccd53db5dce933fef75375d85f929053611a80093dbb2ea3d208c0d4ea8e5ab3ec244ded55422a280e292fd8b2ff66e7c4e8b5c2d81a0ac07744027a34cbb8cedd2de38a9db4c8ec26fb28f67b0a6ce467897b366aa5900bbf05b3f36af037993e19c0ed61f6741e9cb385593863bd0fd11c893929670c626d20d73158782f1fba463824e258be00036de7c28163d6171574ca10bf5658dda37922c8c95f97f226e1a270f86a03d1dd559d57994144fcc23269f626f14a73211cc100cceb57fa72570a2d35762bfa613c4a8574190bb3b7a9d1aa9ec578588ed0c788c7888d999a61ff8f7d5f494ebbe576b008d14bc8dc2e3c9c2571d22dc1e2ba574cc2ee565c996089e530a0cafb3461b7908622789d9ca1977fadf2a1fd2915400fa682793ecfeec817b51d94e7920bbbb02a233f13516bd020b9dbfe70de576ce1534936e73c31de76e6b813d9f6f632f13e9f272ccf6b8780ea0e46801d3dcb0305fc294db4a90ddf6dbcda7bf12aff81976d72a3a7b7e6b11ed5117df1021cc090a477dfdb4d3b13b787e627b0f38566ee500bfea09d5fa8f9f5607aab7de2f5d0a0d49ae967a3307e46710519e23f5eb053abf9ced9e075dec9feb320ee3b4a787b5434e71d23768ffd3a41e56361126afcaa0f56d464b7f57d0d57afa657b6cfb38bfeba83ff2487b7daab0edc633330338ecc2dc6b41e27600b57d72a696ceea33cdbc5f2b8eebe0f0d684ffb23eeb859323a93da4677b812d4a30b735fdc37dd72a65bc4f886e97f0cffeea09c538842767269c600844bea46b1f761eb13a37f770f6883ccecad518d6147391d03e5dcc81e5e2cbd595c9c5f71fd8c4582a8c53a37d0652171767b911696aaff1d699d4d5f2a464037bd9065e919200919900f9e3d12288313ccfeb6b5947b66a93aa6588333009c359c35aaca6a8d055b677ffb3482ee366b6b15a48e54f4cc8d84ebc5e0a41263561196328cb8593b9ba19296cf13580e9a75cd610a7fa547de5a8ac1147520da449f460c2896cbc554b0bcaf99b394601679bb8e76fd71cb7592e76f2d51f3db71d5477028c81bdb9cca18ecfc288e6417b834830f38747acf6a72a00c6f6f7be88ebb86f69286a22dbb89787d2eea2d3c98944c14c40efd258b5f9c4718e9585f96914664ea4be92e2982d7c6d092b2796a05a43abd6edc5b325c23d9aae0aeac246f4850ee28faea76632d6870bf5221c84da5bd1060012189b9fd5cd6638f160d36e78bca975053fff902a245cb05592ed995686dd955651ca7ba039e262a12453458a939b73ce9887228248fd2379e8386bdd89763ce400c74ed418abe18eceeffd84b68df29d165e945272409dda8d252bf9f77759c795f58a54ab06e1a0776128431aa77e80beb0c0659030e88fce2f176040bad0f840a81c0037b225000f8a8b518eabc6063afda009b0bb5e0e129240133db5a534094a1912d975db63774c59958cee2843f29aa10951f3564d9e09280f35f9a253225a8adae346375c3b785953a6e24de4cbb1c5efa7befa8450c7a8813625671853ea9fc697797bb37454b375eb3b97165c135220046930fe60917852ca8abf5c38c734cbe41362996da57dd1266edc43bf0dd39ff8771709d9900d04c91d5aa02ec556015da8dac218a9c7d591ac23e3d68ce8906160441cef876a2176b7e1d2e7d637d216580e00023e9b0135a32a506f7be8899d6915b6b651b3d198713a76cae9eea59737cc4820bab58cee6b330241c29360a1914a7a5e517f82a2398bc0dd13543479ec2cf986fea647c80913c4c9035e5442d17c945c65aa3229eb5fc1e534eceea45579be921f2a1c8a2d5fd3572587b238e39d20b541a690cca6181abcc2c8d88df011de9270685722a01892e191be2e66c105f37600fb009b491a9593310edfbb20cbdb601d37163af7245f7001887bbb22917d649e71e6e118d61572cbec538ddf66d2bc3bfceed5ebb4dc57c449b97baf5c4ed79997f7b093c87805ce61d4a6c811fa5815fbc7974d6989d4cf4c1bf387ea6cfd647e8a30c680e5c7bf4f09fbe9cf6e49d688a182173c3b60772f162146a517cde13e7c4a1840d585cbcfd1ca7538a260bfa8bf9ee8ed2bcc8180a4d658e224d69b377481b13fb941d7a7482807e015fbe982331c71188151b2ef155e3497ff22812695d3dea248357e33693e99d1ae0c0613993aaaf7b40a07531c99323ef4b558e4d33e5202a8a0831ce42cc04a533eb8f9ba7a53f80d503783208a8147c9f8172f57efc333f1da6aab9dc69818124f23a4fcb8de819d0203f48471455f80eff7b7fa8924eb89b66761c6966f7def4a970afa95e60e39b90db28a1a4c2db98c8b273d4665976b923ecd31340f0105cf8b126329cf9e4a80d067f189d72ac088099f0b42a7fd469e2f0596c508dbba46f9f0d0050e706ef571992f7e5ac3e189c9e8ccda0896299316cee5371a5c04e7915640d1296d7c6ac7dd61cd03354c36d421316049a1fdc083c654067b08206fb88bcc46572d9c7190c51aa42155399d719bf3837c4d7a7c523cbf9eb0b1b7f2596183b3f3d580cc0705a8793b8133e6300ab19667b7b4bfced28adac07a030dc8684c49be48d2a12285d7144e2f931b88f7ba15f0edefe595566fd2e086c57470e9d19f1eb9d0f02247fa4d7d2ae2eb2a3ee1f609a9fbbfd049cb907df6039b3785881a1dc4c582a2849f864f00b4dfbbffc312e2ad6a3fc914c2a7a48a9796270da08c20e4f839d97569210284c7ee18c1e1abe4c2ba360f95b86b4ca6a7112fb906004cecc547ad3dc2a358cf6a4ebe5ac760569a312f2672206fd885b202e055ee51596de60f24daa3f1f06b108efba8cbf326fc6f63fea9eac40f3f8fbdfd771d3e8862c335e1e000eeb74176803b7b328c8d25b107a84ac01ebe88e466336</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="c4b126afaf8cdfae87bec8f852e969493269d555fe6fe41a078a89d812fcdaeb">a70224fdf26da160e93cff72afb74972a0981c7962c4afd3ae2e996154730a2b93bc32adc57032bffee6f5e15eea31779e2c97299068fd4a2bcc3c1bef7bd263f0f4291ed51a1c700f87aa563895898198689db96d87d9a6d837dfd75ca0c983bc0616117ba60b8d1442bd186a45c461fcfa4885ae74aed21abe063156ef01a434f5b691b4442c8e0856edae5d3bc3e356042f1833151ec3d94d5bbbe7683c59896f014755f4ccba563e40e8e507223041325fd50a0375e5d82f33b516a50cb86a3e76b35ec3e3b476ca86acddc61934d6f83a33b20a3f4d5c6d37a64b8193899c749d083337b549d9c1c9615bda16ba3212b636150614a4dc3c4692321eadd1992c73d9a2eebcef3ddd6ee2345c4fd171eb55f20da778a252744c8e224500b24a719efec047e96fb10139e6fa8f1cc455937792f4f6c6a0e0d28e33a8c1bacafdcf791b6eb1f8bbdefcaf932c7f8b8bc3bbfd184fbad7bdb3b33dd16c1b396a7d1ab9be2b67fb62a910ced865828f1b8e950539ae37c8080dd2dfe74a359a3867191f583b41079bf6020f432a797cf8be12c4d9506405dcc2c792f574b50648d5643e62aa095325811a4c54bee1dabbd28bb0bcb0753706dee281ed2b07d9a16c2e32a5e998074977dd14945a8fa638349919ab9f39f5568fb802694dd61ad08ddacf3b474a25a07cbf06504228bff6eb5493355264bea0f037cbaca49223d04ee33b5ea7d31af811490105404a96c090eca162c073c828a9dd77ccb75d4a86321b85452b0e204c628c0dc9c2e4b0e8211956a08effab15549949e1a9e2180fb1b4483fd5990f659a9dfec57fcde267d64f11772309294b5ec5c6def8f6f85815742c6b0e15893f20f1632734a46f4fd4072eb0f42cab2c8fcba37aeff4921ea50f7c1cde8aa8264cbe28ce9861183c71c26e48663eec6ce66cf8d46c1922f49dd190188d5a2c91cfe3b41532e2ee65ca9bd7a7662613d3bb55a70b02b1c563486c0325f91b1ede99aec429ac62d689ce8ffc5a0c148e5f345b74c57f9f9ac1556a36e30a952998f77b9e374e3a043c3a33cd0ad170f2ebf5912b42618a5572f4206e350aae55e64b255e830467648c77e5c235c1c605c8d7a9d4b00f530692b68606ce010bde792f2331fcfb4e9cadef20b9fa125d3e0849800b1dc7cec4dbccdb78ac167cdfe486537ed8b6592ab75672d9d8317b1e8bf9b16ea4fd42d6b28f7eb1725e402f6d044912d28cd86e3b59205f900469cf50b91226a5933647af71851279a91a9c6025d91a6ea95a12e4b446f439e74e977eb553c5d50846113e3c9431072077040db4029c4bec36c5a3c6c33f52c3d6092b522d7166d6e6394d6185452991233e9a2f264c4a764748f1c54390745dc16baef985cd1c716adf9a6e551b400dd9587ab88b6be10c36f9552300e0f1238536728c39301193bd51288d2fc0d1e76de31807e1b444afb8abf4ab32fe2f6c76603fd451fb271a24df7b8bbe711387a08a24a171912515d4743388be05deedb43119198cbca40b09459fc37bba4c8e81be5780e515a29bba7fa96820bf091c37aeb98aa6de37be8af756cced4d4b106ef85c86027e83d27c2221ec7bedb8855ce64a1d8541e4700781aa7b479823edc9e30b8bb299f26fa3bb38f3606186c90d1e0d02c94760fd5150d24a9b9b3ed1993a95415509fd05442cf7154049eb1d1077b165c7d50b19db6cbd0b490d372ffc753e9280043e7482681877780ad910127d0216eb6f16192142ed0d47aa6f09e5a4ee050b052195b31d3ac0741c896b6c61cf326c7a3b78a364544dc25b42dbefc53d75b79017bb2a109326d073141ce0d56b58cd98a815c9c205a926a494f746e870ffe5fb1ec2c07b422cbe0c89d9000385be633f631ec5a50ce537c8ae9444a9ea02a42d2fb5392867d21cd8901606a82c1d7db83aa8069d20c9af8e0ea391adc7db8e9c32da224c4f613ef9ffd2ccfe4f10fb37741bc39dad0ab32f10b9cb6181aff12f40dc2f9f6d41cb05990397f87959574c2604f03c25e751ebbd2ce3d2345ca740e4120173b1576fe77db3928645e38ca1b407867c4f753e87c8c25c5f4563ccd398ca85eeaee61623f0d13e715c0fcfef5da878df4172e927ed91bbf29b6a8023cf8145c2dbdce01aee1d624aa7671dd46cb3303f403bd9b2ce078e152ad882993aa64ba1fc0c9304b436ae23e2f5d94dcda1dca897ce63f0e6c27e3872819c07469e056c7e2eccdbb8c56888d8df408833b4be517b308c3db3ab34f756ae9d548144aca2f435b351f2f25340bea979fa5d6c9e0a641ecff9cf45780a6a3505141fd71c6c13881311d300518c303701fe677fd11eb91c31bf6384405f9805b6cc99d04bc73c216a3a46603e418ae106c4f24ed42ddf51e3c412ace2b58d059d61e1124a35e1a995ee573192cc8d215a8dda7b0361cd71584c50115c40d98c6b5523f2d74279cbfc8b3edc904280e00392cc5dba0f514a875278aac2c0436e47973abc876f863c7c353970e4c01cebf0e44444fc63bedd2ca8edeb2ad26a4f19b04f1fb42e64a543529c67432a849438e51aeb61a2a4cc69673a16c5da37c6f2d49926f08973c889e3b29bf991b89a181ec94e65d7a3c2e1277d54e04f11ab3f65d6af2d93d0232c6e9edcf6c396388e5bde416fcae64f3b27d770d5f17249c5e09f5eac3d9878ec1cf21b6513ee2a8b031a440f2f31ed287aa9a2d2076b7ee425f3f011c369bdd22ec3a2bf5dd43f935e7cea94aa13c0f1d251eee9498fa4f54b49e07b5da78dd2d751f8ac9962a54443a0d421fe41eedc65d2443bba132d048c2b533d28214988efe790022424d25f1bd697a3159bb61254bfbbdee0e2709e1fa7695e0a09c45ca0eeb4f208c8d551a66a267ad532e87725dc5ad947722209c418052e17248565e138832a13bc8c5cca958b7fe7c080146f4c499778a6f3757e17e371edbe66f423db4a55bd02246a46171488e58ebe2d72d6628f5bc891e101a65bc94bf207cdfd6d51dad7154c0819916fa02758e6c7ae83a3164eb0265d36b59cce1d6e5e267252cc24ac59751031a337558d9e6d147d1bf9dafc2e27c42b514e6c0a45d49c5895301c01e4a0da4bdce498d9d3dc1f870be6cbe3b19e1ae7ea7cc569841f49679c47be1668c04490233efb462f607cabe8e7194dacfafb2342bf56225383f8238897a08def6b5da1d59790dcafac346bba49330c7755da6fa5751918243f2272fab9825857af702b53461d63dab76e3d8e779574194bde9e2b6bc86189b3156bb8bcda922db23a6b0fe07466661138a6cb99f8f059392d4bbdd74b15e297cadf4033e0bbf18f40ed119c4b471205be8cec8b64177ee345e10f6df03dc2fa8a33a94788394c20a2638aee4e2a7e24181a535ae05e63d192c8d2e5905c37b15bca493efc1f04b1cc4e06eecc48446686b18c1b679cf642fef7d2c2851a502146c4e32bc57f8801e09a72dd1414edb6eadb94697a435ab34df29e8412697de80516b71c28af9f17798018f919eb44da1a4d2613f2e4fd7e729b8c2a5ab81c2474dfbfab661e7cce09db8c18e366fda2d291826b6471ad32adfdee1effa811b26aba95b68d106964c91ec0f7eda639061debd735439e8734796b452ce86a2029fcd9e6d14fd6bae69f6b1c820edbfeed3a77a62cf98f1fccd64b16b47e01d62c7ea2c63fb1e4d0d97b5a83eaa4ac2f0ec74c5ba559f1b198b6d966eb26beedd8434ea3666c956a595841953fcf9d6fe7bacec4f29790a4b98edb9c232d787b257ff458a1204428e75bca12849d93ef59dd56adc72e87628520585ddcfddb981529ba1b7f011b2991ab226ff5c22d780dd4ee70677f0b3a07e6f89ef114388488abc2afe86c3bd2a6eef6e3bb510c5609e4fe475d03d5cbf401236153d3199b2d92bc4dcc71233e80900133f899f0fb9c4b7e378b985914116ceed068681164e1547b35dc48c4648da773ff384dcf2f8f9cb2ac94671036640ee5cdfc5caea02a5c3fbc79df99d0316fc4bcf29df72f19a6048c1adc3c98b3747c433ea8cf5a24c9e216d0bc8e3be9fe0107a4aade7e6253fb82b013320ebc86839359e0d34c25cbf88555f5fdfd18c1d9f1a7b937ede3508b26f3b54e3f63df1a2ae92ba00add407be6d81c017824bf3d03dcfd2f9b52d6e6669c93301d5784c7332dfe528d9622c45aa7cffdfd0ce00cf2035871c4b1515af40eba09a92ddc0f9e7ce4ae47713ac6e3414357bbd2ccd53db5dce933fef75375d85f929053611a80093dbb2ea3d208c0d4ea8e5ab3ec244ded55422a280e292fd8b2ff66e7c4e8b5c2d81a0ac07744027a34cbb8cedd2de38a9db4c8ec26fb28f67b0a6ce467897b366aa5900bbf05b3f36af037993e19c0ed61f6741e9cb385593863bd0fd11c893929670c626d20d73158782f1fba463824e258be00036de7c28163d6171574ca10bf5658dda37922c8c95f97f226e1a270f86a03d1dd559d57994144fcc23269f626f14a73211cc100cceb57fa72570a2d35762bfa613c4a8574190bb3b7a9d1aa9ec578588ed0c788c7888d999a61ff8f7d5f494ebbe576b008d14bc8dc2e3c9c2571d22dc1e2ba574cc2ee565c996089e530a0cafb3461b7908622789d9ca1977fadf2a1fd2915400fa682793ecfeec817b51d94e7920bbbb02a233f13516bd020b9dbfe70de576ce1534936e73c31de76e6b813d9f6f632f13e9f272ccf6b8780ea0e46801d3dcb0305fc294db4a90ddf6dbcda7bf12aff81976d72a3a7b7e6b11ed5117df1021cc090a477dfdb4d3b13b787e627b0f38566ee500bfea09d5fa8f9f5607aab7de2f5d0a0d49ae967a3307e46710519e23f5eb053abf9ced9e075dec9feb320ee3b4a787b5434e71d23768ffd3a41e56361126afcaa0f56d464b7f57d0d57afa657b6cfb38bfeba83ff2487b7daab0edc633330338ecc2dc6b41e27600b57d72a696ceea33cdbc5f2b8eebe0f0d684ffb23eeb859323a93da4677b812d4a30b735fdc37dd72a65bc4f886e97f0cffeea09c538842767269c600844bea46b1f761eb13a37f770f6883ccecad518d6147391d03e5dcc81e5e2cbd595c9c5f71fd8c4582a8c53a37d0652171767b911696aaff1d699d4d5f2a464037bd9065e919200919900f9e3d12288313ccfeb6b5947b66a93aa6588333009c359c35aaca6a8d055b677ffb3482ee366b6b15a48e54f4cc8d84ebc5e0a41263561196328cb8593b9ba19296cf13580e9a75cd610a7fa547de5a8ac1147520da449f460c2896cbc554b0bcaf99b394601679bb8e76fd71cb7592e76f2d51f3db71d5477028c81bdb9cca18ecfc288e6417b834830f38747acf6a72a00c6f6f7be88ebb86f69286a22dbb89787d2eea2d3c98944c14c40efd258b5f9c4718e9585f96914664ea4be92e2982d7c6d092b2796a05a43abd6edc5b325c23d9aae0aeac246f4850ee28faea76632d6870bf5221c84da5bd1060012189b9fd5cd6638f160d36e78bca975053fff902a245cb05592ed995686dd955651ca7ba039e262a12453458a939b73ce9887228248fd2379e8386bdd89763ce400c74ed418abe18eceeffd84b68df29d165e945272409dda8d252bf9f77759c795f58a54ab06e1a0776128431aa77e80beb0c0659030e88fce2f176040bad0f840a81c0037b225000f8a8b518eabc6063afda009b0bb5e0e129240133db5a534094a1912d975db63774c59958cee2843f29aa10951f3564d9e09280f35f9a253225a8adae346375c3b785953a6e24de4cbb1c5efa7befa8450c7a8813625671853ea9fc697797bb37454b375eb3b97165c135220046930fe60917852ca8abf5c38c734cbe41362996da57dd1266edc43bf0dd39ff8771709d9900d04c91d5aa02ec556015da8dac218a9c7d591ac23e3d68ce8906160441cef876a2176b7e1d2e7d637d216580e00023e9b0135a32a506f7be8899d6915b6b651b3d198713a76cae9eea59737cc4820bab58cee6b330241c29360a1914a7a5e517f82a2398bc0dd13543479ec2cf986fea647c80913c4c9035e5442d17c945c65aa3229eb5fc1e534eceea45579be921f2a1c8a2d5fd3572587b238e39d20b541a690cca6181abcc2c8d88df011de9270685722a01892e191be2e66c105f37600fb009b491a9593310edfbb20cbdb601d37163af7245f7001887bbb22917d649e71e6e118d61572cbec538ddf66d2bc3bfceed5ebb4dc57c449b97baf5c4ed79997f7b093c87805ce61d4a6c811fa5815fbc7974d6989d4cf4c1bf387ea6cfd647e8a30c680e5c7bf4f09fbe9cf6e49d688a182173c3b60772f162146a517cde13e7c4a1840d585cbcfd1ca7538a260bfa8bf9ee8ed2bcc8180a4d658e224d69b377481b13fb941d7a7482807e015fbe98b770d81ab587ded149887f65f09bf64fed132e4696fccbbd18b0f1fe91def8a6b7d476be9f5f913d73429a23684b751e5f3accf0b33121b1ff70ed5463f23bf29fdef48400485fbaea6aa406b69409ebc7c88a00dfaf0738ea87a410ae9360d3e1941b2800623454ca3409221a11e7e4f9b47ea344e15d456a0eee5eeae5e66e56b61550dfb867265e4d380674de898a564b9c380c771df536c910ed1591af6b342a50ac993069a621ce86a73d814b5ed3fc6bd9eed1849b33a9c1f6700ff44fb45654d3d724b717548434d3fa12bf936a8fd403ebcf5127aac7768f8be7eca6ae39da16ec31cc4164d66a3cfe20fa63b398257bcaf3a944f3b38d42e183f5ee1aca1eb527827e190e2463098e4b0cbadae09a16759918eccf9fb25609616b12d7a1ab7fc6926e73b3bf5440ad659ef8ea2d607646c80bdbea85158d2280224c8a0c786d9d78b2042f878805395b13390a77689278b0089fe61130e862954410ac282eb0ff6a2d4432fc7c528fd6540fd9f606249284f975cc451e613476dccc88b4e454d323f3587bff53dd61bc3004ab90ec2ff06d47a73c8374531f89bcb17f4c2e914a69c1fe4b93c38cf88951f7a7c907cd6c6a911ca1a1977ad06fe2c8596427869a5902ad83a26b2b6cd08905bcb9167e87c1525dbf9292f14d7295f04d153c975d4a029bd54fad217e6c6ca8eb06bcc928cef61d25e55f7d81598897c062fdfb0cc9833bb5ec14411cd50040c1dfd2436e4302caca5414f6d588461a</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-xray">
       <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
@@ -442,6 +442,22 @@ hide:hover {
       </tags>
   </entry>
   <entry>
+    <title>忍者相关攻略</title>
+    <url>/posts/2e3e6e01/</url>
+    <content><![CDATA[<p>直接开偷.</p>
+<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
+<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
+<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
+<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
+]]></content>
+      <categories>
+        <category>FF14</category>
+      </categories>
+      <tags>
+        <tag>FF14</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pies In The Sky</title>
     <url>/posts/b1dacaa5/</url>
     <content><![CDATA[<p>[4/9] 叠过9个就开始画</p>
@@ -458,22 +474,6 @@ hide:hover {
       </categories>
       <tags>
         <tag>连载中</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>忍者相关攻略</title>
-    <url>/posts/2e3e6e01/</url>
-    <content><![CDATA[<p>直接开偷.</p>
-<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p><a href="https://ngabbs.com/read.php?tid=31436041">6.X忍者PVE指南</a></p>
-<p><a href="https://ngabbs.com/read.php?tid=32473473">下忍视角的绝龙诗开荒攻略选择及各阶段tips</a></p>
-<h4 id="忍者BIS"><a href="#忍者BIS" class="headerlink" title="忍者BIS"></a>忍者BIS</h4><p><img src="https://pic.imgdb.cn/item/62d55d74f54cd3f9375db424.png" alt="600忍者bis"></p>
-<p><a href="https://ngabbs.com/read.php?tid=30130621">[6.05]全职业开荒+全职业毕业配装合集(完结)</a></p>
-]]></content>
-      <categories>
-        <category>FF14</category>
-      </categories>
-      <tags>
-        <tag>FF14</tag>
       </tags>
   </entry>
   <entry>
@@ -494,6 +494,163 @@ hide:hover {
       </categories>
       <tags>
         <tag>连载中</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次服务器扩容</title>
+    <url>/posts/48bacde0/</url>
+    <content><![CDATA[<p>前情提要：</p>
+<img src="./error500.png" style="height: 100px"/>
+
+<img src="./wx1.png" style="height: 80px"/>
+
+<img src="./server1.png" style="height: 80px"/>
+
+<hr>
+<p>已知：系统所在分区已满且不记得上面运行了些什么服务</p>
+<p>求：如何在不重启的情况下对目标分区进行扩容</p>
+<p><code>再次感谢 niceb 同学对此次任务的技术支持</code></p>
+<p><hide>不会炸吧 不会炸吧 不会炸吧 天灵灵地灵灵 老天保佑</hide></p>
+<p>解：</p>
+<p>查看硬盘数量和分区情况</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<details><summary>[root@localhost ~]# fdisk -l</summary>
+<pre>Disk /dev/sda: 214.7 GB, 214748364800 bytes, 419430400 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00004424
+
+<p>   Device Boot      Start         End      Blocks   Id  System<br>/dev/sda1   *        2048     2099199     1048576   83  Linux<br>/dev/sda2         2099200   146800639    72350720   8e  Linux LVM</p>
+<p>Disk /dev/mapper/centos-root: 47.0 GB, 46980399104 bytes, 91758592 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</p>
+<p>Disk /dev/mapper/centos-swap: 4160 MB, 4160749568 bytes, 8126464 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</p>
+<p>Disk /dev/mapper/centos-home: 22.9 GB, 22938648576 bytes, 44802048 sectors<br>Units = sectors of 1 * 512 = 512 bytes<br>Sector size (logical/physical): 512 bytes / 512 bytes<br>I/O size (minimum/optimal): 512 bytes / 512 bytes</pre></p>
+</details>
+
+<p>或者使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<details><summary>[root@localhost ~]# lsblk</summary>
+<pre>NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+fd0               2:0    1    4K  0 disk 
+sda               8:0    0  200G  0 disk 
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0   69G  0 part 
+  ├─centos-root 253:0    0 43.8G  0 lvm  /
+  ├─centos-swap 253:1    0  3.9G  0 lvm  [SWAP]
+  └─centos-home 253:2    0 21.4G  0 lvm  /home
+</pre></details>
+
+<p>可以看到在 sda 下还有 131G 未分配的空间</p>
+<h3 id="创建新分区"><a href="#创建新分区" class="headerlink" title="创建新分区"></a>创建新分区</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure>
+
+<p>依次输入 n / enter / enter / enter / t /  L / 8e / w</p>
+<details><summary>[root@localhost ~]# fdisk /dev/sda</summary>
+<pre>Welcome to fdisk (util-linux 2.23.2).
+
+<p>Changes will remain in memory only, until you decide to write them.<br>Be careful before using the write command.</p>
+<p>Command (m for help): n<br>Partition type:<br>   p   primary (2 primary, 0 extended, 2 free)<br>   e   extended<br>Select (default p):<br>Using default response p<br>Partition number (3,4, default 3):<br>First sector (146800640-419430399, default 146800640):<br>Using default value 146800640<br>Last sector, +sectors or +size{K,M,G} (146800640-419430399, default 419430399):<br>Using default value 419430399<br>Partition 3 of type Linux and of size 130 GiB is set</p>
+<p>Command (m for help): t<br>Partition number (1-3, default 3):<br>Hex code (type L to list all codes): L</p>
+<p> 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris<br> 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-<br> 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-<br> 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden C:  c6  DRDOS/sec (FAT-<br> 4  FAT16 &lt;32M      40  Venix 80286     85  Linux extended  c7  Syrinx<br> 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data<br> 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .<br> 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility<br> 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt<br> 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access<br> a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O<br> b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor<br> c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi eb  BeOS fs<br> e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT<br> f  W95 Ext’d (LBA) 54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/<br>10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC b<br>11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor<br>12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f4  SpeedStor<br>14  Hidden FAT16 &lt;3 61  SpeedStor       ab  Darwin boot     f2  DOS secondary<br>16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS<br>17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE<br>18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fd  Linux raid auto<br>1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fe  LANstep<br>1c  Hidden W95 FAT3 75  PC/IX           be  Solaris boot    ff  BBT<br>1e  Hidden W95 FAT1 80  Old Minix<br>Hex code (type L to list all codes): 8e<br>Changed type of partition ‘Linux’ to ‘Linux LVM’</p>
+<p>Command (m for help): w<br>The partition table has been altered!</p>
+<p>Calling ioctl() to re-read partition table.</p>
+<p>WARNING: Re-reading the partition table failed with error 16: Device or resource busy.<br>The kernel still uses the old table. The new table will be used at<br>the next reboot or after you run partprobe(8) or kpartx(8)<br>Syncing disks.<br></pre></details></p>
+<pre>
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200   146800639    72350720   8e  Linux LVM
+/dev/sda3       146800640   419430399   136314880   8e  Linux LVM
+</pre>
+
+
+
+<p><code>The new table be used at the next reboot or after you run partprobe(8) or kpartx(8)</code></p>
+<p><del>[root@localhost ~]# partprobe /dev/sda3</del><br><del>Error: Could not stat device /dev/sda3 - No such file or directory.</del></p>
+<h3 id="重读分区表"><a href="#重读分区表" class="headerlink" title="重读分区表"></a>重读分区表</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">partprobe</span><br></pre></td></tr></table></figure>
+
+<p>该命令没有输出</p>
+<h3 id="创建物理卷"><a href="#创建物理卷" class="headerlink" title="创建物理卷"></a>创建物理卷</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pvcreate /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<details><summary>[root@localhost ~]# pvcreate /dev/sda3</summary>
+<pre>Physical volume "/dev/sda3" successfully created.
+</pre></details>
+
+<h3 id="添加物理卷-dev-sda3-到卷组-centos"><a href="#添加物理卷-dev-sda3-到卷组-centos" class="headerlink" title="添加物理卷 /dev/sda3 到卷组 centos"></a>添加物理卷 /dev/sda3 到卷组 centos</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vgextend centos /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<pre>[root@localhost ~]# pvcreate /dev/sda3
+/etc/lvm/archive/.lvm_localhost.localdomain_25674_920701457: write error failed: No space left on device
+</pre>
+
+<p>划重点 <code>No space left on device</code></p>
+<p>真的是一滴都不剩了</p>
+<details><summary>[root@localhost ~]# pvcreate /dev/sda3</summary>
+<pre>Volume group "centos" successfully extended
+</pre></details>
+
+<p>此时观察一下 centos 卷组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vgdisplay</span><br></pre></td></tr></table></figure>
+
+<pre>--- Volume group ---
+  VG Name               centos
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  5
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               198.99 GiB
+  PE Size               4.00 MiB
+  Total PE              50942
+  Alloc PE / Size       17662 / 68.99 GiB
+  Free  PE / Size       33280 / 130.00 GiB
+  VG UUID               BSr9nB-EIMu-xRLk-bdo0-Z2x6-ZC4N-asZ5Gx</pre>
+
+<p><code>Free  PE / Size       33280 / 130.00 GiB</code></p>
+<h3 id="将空闲的空间分配给-root-文件系统"><a href="#将空闲的空间分配给-root-文件系统" class="headerlink" title="将空闲的空间分配给 root 文件系统"></a>将空闲的空间分配给 root 文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lvextend -l +100%FREE /dev/mapper/centos-root</span><br></pre></td></tr></table></figure>
+
+<details><summary>[root@localhost ~]# lvextend -l +100%FREE /dev/mapper/centos-root</summary>
+<pre>Size of logical volume centos/root changed from 43.75 GiB (11201 extents) to 173.75 GiB (44481 extents).
+Logical volume centos/root successfully resized.</pre></details>
+
+<h3 id="对-root-文件系统执行扩容"><a href="#对-root-文件系统执行扩容" class="headerlink" title="对 root 文件系统执行扩容"></a>对 root 文件系统执行扩容</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xfs_growfs /dev/mapper/centos-root</span><br></pre></td></tr></table></figure>
+
+<details><summary>[root@localhost ~]# xfs_growfs /dev/mapper/centos-root</summary>
+<pre>meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=2867456 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=11469824, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=5600, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 11469824 to 45548544
+</pre></details>
+
+<hr>
+<p>最后看一眼磁盘使用情况</p>
+<pre>
+[root@localhost ~]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root  174G   44G  131G  26% /
+</pre>
+
+<p>OK 下班</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>运维</tag>
       </tags>
   </entry>
 </search>
